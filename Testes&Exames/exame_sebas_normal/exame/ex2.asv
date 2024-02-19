@@ -1,0 +1,29 @@
+%%
+load("input.mat");
+
+%% a)
+dimensions = size(list)
+
+count = 0;
+for i=1:dimensions(1)
+    if list{i} == "Adão"
+        count = count+1;
+    end
+end
+count
+
+BF = initialize_filter(500);
+for i=1:dimensions(1)
+    BF = inserir_elemento_count(list{i}, BF);
+end
+estimateCount(BF, 'Adão')
+
+%% b)
+n = length(extra);
+
+counters = zeros(1,n);
+for i=1:n
+    counters(estimateCount(BF, key))
+end
+
+
